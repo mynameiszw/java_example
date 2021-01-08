@@ -19,6 +19,9 @@ public class LearnClass {
         zjm.getName();  // zhangjm
         zjm.getScore(); // 100
 
+        // 下面这种方式是允许的。向上/向下转型
+        // Person p = new Student()
+
     }
 }
 
@@ -94,6 +97,12 @@ class Student extends Person {
     public int getScore() {
         System.out.println(this.score);
         return this.score;
+    }
+
+    @Override // Compile error! 加上 @Override 让编译器检查覆写的方法是否正确，异常会在编译期抛出
+    public String getName() {
+        System.out.println("覆写父类的 getName 方法：" + this.name);
+        return this.name;
     }
 }
 
