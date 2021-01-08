@@ -13,7 +13,12 @@ public class LearnClass {
         // 下面创建 student 实例会报错，因为无法传递 name 和 age
         // 而创建时会调用父类 Person 的 default constructor 即 Person()
         // Student zjm = new Student(1, 100);
-        // TODO:? 所以以 java 的思想，每个类还是必须要做 set/get/update 等 method 出来 ?
+
+        // 应该在 Student 构建器中加入父类的参数 name 和 age，并通过 super(name, age) 完成父类的构造
+        Student zjm = new Student("zhangjm", 4, 16, 100);
+        zjm.getName();  // zhangjm
+        zjm.getScore(); // 100
+
     }
 }
 
@@ -74,16 +79,24 @@ class Student extends Person {
 
     // 鉴于子类无法访问父类的 private 数据，要重写 name 和 age，改 private 为 protected
 
-    Student(int id, int score) {
+    // 构建参数加上父类的两个参数 name 和 age, 并使用super(name, age)方法调用父类构造器
+    Student(String name, int age, int id, int score) {
+        super(name, age);
         this.id = id;
         this.score = score;
     }
 
     public int getId() {
+        System.out.println(this.id);
         return this.id;
     }
 
     public int getScore() {
+        System.out.println(this.score);
         return this.score;
     }
 }
+
+// 到目前为止，java&python思路都是大同小异。包括 this <> self, private <> __method, super <> super, constructor <> __init__
+
+// TODO: https://www.liaoxuefeng.com/wiki/1252599548343744/1260454548196032
