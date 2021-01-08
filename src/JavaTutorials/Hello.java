@@ -1,26 +1,1 @@
-package JavaTutorials;
-
-public class Hello {
-    public static void main(String [] args) {
-        System.out.println("Hello world!"); // Hello world!
-
-        int x = 1;
-        System.out.println(x);  // 1
-        x = 200;
-        System.out.println(x);  // 200
-        x = x + 100;
-        System.out.println(x);  // 300
-
-        Integer a = 1;
-        System.out.println(a);  // 1
-        String s = "zhangwei";
-        System.out.println("my name is " + s);  // my name is zhangwei
-
-        boolean isGreater = 5 > 3;  // true
-        char c = '中';  // 一个unicode字符，用 '' 赋值，用 "" 赋值是String
-
-        int[] ns = {1,2,3};
-        System.out.println(ns[0]);  // 1
-
-    }
-}
+package JavaTutorials;public class Hello {    public static void main(String [] args) {        System.out.println("Hello world!"); // Hello world!        int x = 1;        System.out.println(x);  // 1        x = 200;        System.out.println(x);  // 200        x = x + 100;        System.out.println(x);  // 300        Integer a = 1;        System.out.println(a);  // 1        String s = "zhangwei";        System.out.println("my name is " + s);  // my name is zhangwei        System.out.printf("my name is %s\n", s);  // my name is zhangwei        boolean isGreater = 5 > 3;  // true        char c = '中';  // 一个unicode字符，用 '' 赋值，用 "" 赋值是String        int[] ns = {1,2,3};        System.out.println(ns[0]);  // 1        // == 表示“引用是否相等”，或者说，是否指向同一个对象        // var1.equals(var2) 来判断变量的值是否相等        int[] n1 = { 1, 4, 9, 16, 25 };        System.out.println(n1[2]);  // 9        int[][] n2 = {                {1, 3, 5},                {2, 4, 6}        };        System.out.println(n2[0][1]);   // 3    }}
