@@ -136,11 +136,31 @@ interface InterfacePerson {
 
 // 目录是包名，文件名是类名
 
-// 作用域
+// Tag: 作用域
 // public：被任意访问
 // private：在类 class 中任意访问
 // protected：可以被子类访问，用以继承
 // {}：括号内的变量无法在外部引用
 // final：禁止继承 public final class Person {}；禁止被覆写 protected final void run() {}；禁止被重新赋值 private final int n = 0
 
+// Tag: 内部类，意义何在不清楚
+class Outer {
+    class Inner {
+        // 这是一个内部类，不能单独存在，必须依附于外部类
+        // Outer outer = new Outer();
+        // Outer.Inner inner = outer.new Inner();
+        // 类似这样
+    }
+}
+
+// Java内部类：Inner / Anonymous / Static Nested
+
+// classpath 是 JVM 用到的一个环境变量，指导 JVM 如何搜索 class（.class执行文件）
+// java -classpath 或 java -cp
+
+// jar包：把package组织的目录，即多个目录下的多个.class文件和其它文件打成一个jar文件；可以想象为一个发布包，同时也是一个zip包
+// 打包时要注意路径，如果打包根是 path/to.class 那么引用时则为 path.to
+// META-INF/MANIFEST.MF 允许jar包包含多个其它jar包，须写配置文件，来构建大型应用。不过也有其它工具例如maven
+
+// 模块：引入了一些文件目录结构和配置文件，解决程序启动时jar包依赖检查的问题
 
