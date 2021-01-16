@@ -108,4 +108,39 @@ class Student extends Person {
 
 // 到目前为止，java&python思路都是大同小异。包括 this <> self, private <> __method, super <> super, constructor <> __init__
 
-// TODO: https://www.liaoxuefeng.com/wiki/1252599548343744/1260454548196032
+// abstract 用来声明一个抽象的对象/方法，有这个名字，但实际啥也没有
+// 只能用来被继承，实际啥也干不了
+abstract class AbstractClass {
+    public abstract void absctractMethod();
+}
+
+// interface 接口，若抽象类没有字段，可以改写为接口
+// 接口定义的所有方法默认都是 public abstract
+// 接口要被继承，需要使用 implements 例如 class Student implements Person {}
+// 一个类只可以继承（extends）一个父类，但可以实现（implements）多个interface
+// 一个interface只可以继承（extends）另一个interface
+interface InterfacePerson {
+    void run();
+    String getName();
+
+    //TODO: ? 若接口新增的是 default 方法，子类不必全部修改。若非 default 方法，会涉及到修改全部子类，不太理解了 ?
+    default void defaultMethod() {
+        System.out.println("Do Something");
+    }
+}
+
+// 廖雪峰的教程，浅显，好入手；Thinking in Java 较难但是全面
+
+// static，独立的内存空间。静态方法和静态变量可以在 不创建实例 的情况下调用
+// 例如 类名.静态变量名，类名.静态方法名。可以说跟 Python 的 @staticmethod 是类似的思路
+
+// 目录是包名，文件名是类名
+
+// 作用域
+// public：被任意访问
+// private：在类 class 中任意访问
+// protected：可以被子类访问，用以继承
+// {}：括号内的变量无法在外部引用
+// final：禁止继承 public final class Person {}；禁止被覆写 protected final void run() {}；禁止被重新赋值 private final int n = 0
+
+
