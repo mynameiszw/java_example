@@ -22,6 +22,11 @@ public class LearnClass {
         // 下面这种方式是允许的。向上/向下转型
         // Person p = new Student()
 
+        // JavaBean，也就是getattr/setattr的思路
+        JavaBean jb = new JavaBean();
+        jb.setName("zhangwei");
+        System.out.println(jb.getName());   // zhangwei
+
     }
 }
 
@@ -163,4 +168,29 @@ class Outer {
 // META-INF/MANIFEST.MF 允许jar包包含多个其它jar包，须写配置文件，来构建大型应用。不过也有其它工具例如maven
 
 // 模块：引入了一些文件目录结构和配置文件，解决程序启动时jar包依赖检查的问题
+
+class JavaBean {
+    private String name;
+    private int age;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+
+// 枚举类，通过enum定义；类似于选项，在if或switch中应用
+
+// 记录类，通过record定义；自动将参数作为类的属性？例子上的跑不通
 
